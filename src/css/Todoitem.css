@@ -1,0 +1,24 @@
+.todoitem_checked{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px #ccc dotted;
+    text-decoration: line-through;
+}
+.todoitem_unchecked{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px #ccc dotted;
+    text-decoration: none;
+}
+.btnStyle{
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+}
+.checkbox{
+    margin-right: 9px;
+}

@@ -1,0 +1,7 @@
+form{
+    display: flex;
+}
+.input_text{
+    flex: 10;
+    padding: 5px;
+}
