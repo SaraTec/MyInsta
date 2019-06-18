@@ -5,24 +5,16 @@ import './components/Header'
 import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import uuid from 'uuid';
+import DataLoad from './Data';
 class App extends Component {
     state = {
         todos: []
     }
-    markComplete = (id) => {
-
-        let todo_state = this.state.todos.map(todo => {
-            if (todo.id === id) {
-                todo.completed = !todo.completed
-            }
-            return todo;
-        })
-        this.setState(
-            {
-                todos: todo_state
-            });
+    componentDidMount = async () => {
+        let data = await DataLoad();
+        console.log(data);
+        this.setState({ todos: data });
     }
-
     delTodo = (id) => {
         this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] })
 
@@ -37,7 +29,12 @@ class App extends Component {
             this.setState({ todos: [...this.state.todos, newTodo] });
         }
         else {
-            alert("Заповніть поле")
+
+            /*fetch('https://5b27755162e42b0014915662.mockapi.io/api/v1/posts').then(promise => { return promise.json(); })
+                .then(json => {
+                    data = json;
+                    console.log(json);
+                })*/
         }
     }
     render() {
@@ -47,7 +44,7 @@ class App extends Component {
                 <div className="conntainer">
                     <Header />
                     <AddTodo addTodo={this.addTodo} />
-                    <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+                    <Todos todos={this.state.todos} delTodo={this.delTodo} />
                 </div>
             </div>
         );
