@@ -18,4 +18,5 @@ const DataDelete = (id) => {
     })
         .then(res => res.json());
 };
-export default DataLoad
+export  {DataLoad}
+export  {DataDelete}

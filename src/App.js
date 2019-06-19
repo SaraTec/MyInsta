@@ -3,21 +3,22 @@ import Todos from './components/Todos'
 import './css/App.css'
 import './components/Header'
 import Header from './components/Header';
-import AddTodo from './components/AddTodo';
 import uuid from 'uuid';
-import DataLoad from './Data';
+import { DataLoad, DataDelete } from './Data';
 class App extends Component {
     state = {
         todos: []
     }
     componentDidMount = async () => {
         let data = await DataLoad();
-        console.log(data);
+        data.sort(function (a, b) {
+            return new Date(b.createdAt) - new Date(a.createdAt);;
+        });
         this.setState({ todos: data });
     }
-    delTodo = (id) => {
+    delTodo = async(id) => {
         this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] })
-
+        await DataDelete(id);
     }
     addTodo = (title) => {
         if (title !== "") {
@@ -29,22 +30,16 @@ class App extends Component {
             this.setState({ todos: [...this.state.todos, newTodo] });
         }
         else {
-
-            /*fetch('https://5b27755162e42b0014915662.mockapi.io/api/v1/posts').then(promise => { return promise.json(); })
-                .then(json => {
-                    data = json;
-                    console.log(json);
-                })*/
         }
     }
     render() {
         return (
-
             <div className="App">
                 <div className="conntainer">
                     <Header />
-                    <AddTodo addTodo={this.addTodo} />
-                    <Todos todos={this.state.todos} delTodo={this.delTodo} />
+                    <div className="polotno">
+                        <Todos todos={this.state.todos} delTodo={this.delTodo} />
+                    </div>
                 </div>
             </div>
         );

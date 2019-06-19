@@ -1,6 +1,127 @@
-.header{
-    background-color: #333;
-    color:#fff;
-    padding: 10px;
+header{
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.0975);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    color:black;
     text-align: center;
+    transition: height .2s ease-in-out;
+    display: flex;
+    justify-content: center;
 }
+.main_header{
+    display: flex;
+    max-width: 1010px;
+    padding: 26px 20px;
+    width: 100%;
+    height: 76px;
+   min-height: 51px;
+    align-items: center;
+    
+}
+.SvO5t {
+    background-color: #262626;
+    height: 28px;
+    margin: 0 16px;
+    width: 1px;
+}
+.cq2ai {
+    margin-top: 7px;
+}
+.main_header
+.part1{
+    display: flex;
+    min-width: 40px;
+    width: 377.5px;
+    height: 36px;
+    align-items: center;
+}
+.main_header
+.part1
+.icon{
+    background-repeat: no-repeat;
+    background-position: -52px -234px;
+    height: 24px;
+    width: 24px;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_4f7ac8e0a402.png/4f7ac8e0a402.png);    
+}
+.main_header
+.part1
+.intagram {
+    background-repeat: no-repeat;
+    background-position: -94px -72px;
+    height: 29px;
+    width: 103px;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_4f7ac8e0a402.png/4f7ac8e0a402.png);
+    display: block;
+}
+.main_header
+.part2{
+    
+    height: 28px;
+    width: 215px;
+    font-size: 13px;
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 7px; 
+    cursor: text;
+}
+.lupa{
+    margin-right: 6px;
+    background-repeat: no-repeat;
+    background-position: -437px -344px;
+    height: 10px;
+    width: 10px;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_f01fcb405c10.png/f01fcb405c10.png);
+    display: block;
+    margin-bottom: 3px;
+}
+.part3
+{
+    display: flex;
+    justify-content: flex-end;
+    width: 377.5px;
+    height: 28px;
+}
+.part3
+.item1{
+    background-repeat: no-repeat;
+    background-position: -130px -286px;
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_4f7ac8e0a402.png/4f7ac8e0a402.png);
+}
+.item2{
+    background-repeat: no-repeat;
+    background-position: -52px -260px;
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_4f7ac8e0a402.png/4f7ac8e0a402.png);
+}
+.item3{
+    background-repeat: no-repeat;
+    background-position: -271px -182px;
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_4f7ac8e0a402.png/4f7ac8e0a402.png);
+}
+.part3
+div{
+    display: flex;
+    flex-direction: row;
+    width: 156px;
+    justify-content: space-between;
+    padding-left: 24px;
+}
+
+
