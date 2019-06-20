@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '../css/Todoitem.css'
-export class Todoitem extends Component {
+import '../css/Postitem.css'
+export class Postitem extends Component {
 
     render() {
         const { id, userName, imageUrl, avatar, likes, description,createdAt} = this.props.todo;
@@ -9,7 +9,11 @@ export class Todoitem extends Component {
         let now = new Date();
         let was = new Date(createdAt);
         let veriable;
-        if( (veriable =(now.getMonth()-was.getMonth()))!=0){
+        if( (veriable =(now.getFullYear()-was.getFullYear()))!=0){
+            ago = veriable.toString();  
+            (ago == "1") ? ago+=" рік назад":ago+=" років назад";          
+        }
+        else if( (veriable =(now.getMonth()-was.getMonth()))!=0){
             ago = veriable.toString();  
             (ago == "1") ? ago+=" місяць назад":ago+=" місяців назад";          
         }else if((veriable =(now.getDay()-was.getDay()))!=0){
@@ -41,25 +45,25 @@ export class Todoitem extends Component {
                 <img className="post_img" src={imageUrl}></img>
                 <div class="respons">
                     <button>
-                        <span class="responsitem1"></span>
+                        <span className="responsitem1"></span>
                     </button>
                     <button>
-                        <span class="responsitem2"></span>
+                        <span className="responsitem2"></span>
                     </button>
                     <button>
-                        <span class="responsitem3"></span>
+                        <span className="responsitem3"></span>
                     </button>
                     <button style = {{marginLeft: "440px"}}>
-                        <span   class="responsitem4"></span>
+                        <span   className="responsitem4"></span>
                     </button>
                 </div>
-                <div class="likes">
+                <div className="likes">
                     <p>{likes} вподобань</p>
                 </div>
-                <div class="description">
+                <div className="description">
                     <p><span style = {{fontWeight : '600'}}>{userName}</span> {description}</p>
                 </div>
-                <div class="time">
+                <div className="time">
                     <p>{ago}</p>
                 </div>
             </div >
@@ -69,4 +73,4 @@ export class Todoitem extends Component {
 
 
 
-export default Todoitem
+export default Postitem

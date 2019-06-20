@@ -30,3 +30,47 @@ h3{
     display: flex;
     justify-content: center;
 }
+.polotno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+
+    padding-bottom: 1px;
+}
+.polotno button
+{
+    min-height: 40px;
+    min-width: 40px;
+    background-color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.conntainer{
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 77px;
+}
+.load{
+    margin: 20px 0px 20px;
+    background-color: #fafafa;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.load span{
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    background-position: -323px -52px;
+    display: block;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_35faea4a0268.png/35faea4a0268.png);
+}
