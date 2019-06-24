@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import '../css/Postitem.css'
+import Comments from './Comments'
 export class Postitem extends Component {
     state = {
         liked: false,
@@ -97,6 +98,7 @@ export class Postitem extends Component {
                 <div className="description">
                     <p><span style={{ fontWeight: '600' }}>{userName}</span> {description}</p>
                 </div>
+                {this.props.todo.comments ? <Comments hidden = {true} comments = {this.props.todo.comments}/> : <Comments hidden = {true} comments = {new Array()}/>}
                 <div className="time">
                     <p>{ago}</p>
                 </div>

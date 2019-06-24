@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 class Posts extends Component {
     render(){
         return this.props.todos.map((todo)=>(
-            <h3>
+            <div>
                 <Postitem key={todo.id} todo={todo} delTodo={this.props.delTodo} />
-            </h3>
+            </div>
         ));
     }
 }

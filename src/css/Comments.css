@@ -1,0 +1,28 @@
+.comments{
+    font-size:14px;
+    width: 100%;
+    padding: 0px 16px;
+}
+.comments *{
+    margin-top: 4px;
+}
+.show_more_comments{
+    color:#999;
+    height: 19px !important;
+    min-height: 0px!important;
+}
+.CommentItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment_like{
+    background-position: -273px -128px;
+    height: 11px;
+    width: 12px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_4e9d9587d7de.png/4e9d9587d7de.png);
+}
