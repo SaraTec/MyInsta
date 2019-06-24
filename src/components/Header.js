@@ -3,26 +3,26 @@ import '../css/Header.css'
 function Header() {
     return (
         <header>
-            <div class="main_header">
-                <div class="part1">
-                    <span class="icon" aria-label="Instagram">
+            <div className="main_header">
+                <div className="part1">
+                    <span className="icon" aria-label="Instagram">
                     </span>
-                    <div class="SvO5t">
+                    <div className="SvO5t">
                     </div>
-                    <div class="cq2ai">
-                        <span class="intagram" aria-label="Instagram">
+                    <div className="cq2ai">
+                        <span className="intagram" aria-label="Instagram">
                         </span>
                     </div>
                 </div>
-                <div class="part2">
-                    <span class="lupa">
-                    </span><span class="TqC_a">Пошук</span>
+                <div className="part2">
+                    <span className="lupa">
+                    </span><span className="TqC_a">Пошук</span>
                 </div>
-                <div class="part3">
+                <div className="part3">
                     <div>
-                        <span class="item1"></span>
-                        <span class="item2"></span>
-                        <span class="item3"></span>
+                        <span className="item1"></span>
+                        <span className="item2"></span>
+                        <span className="item3"></span>
                     </div>
                 </div>
             </div>
