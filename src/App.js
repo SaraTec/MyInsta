@@ -9,7 +9,8 @@ import { DataLoad, DataDelete, DataPost } from './Data';
 class App extends Component {
     state = {
         todos: [],
-        loadpost: false
+        loadpost: false,
+        showMore: false
     }
     componentDidMount=()=>{
         this.loadAll();       
@@ -57,8 +58,7 @@ class App extends Component {
             <div className="App">
                 <div className="conntainer">
                     <Header />
-                    {this.state.loadpost ? <ModalForLoad close = {this.showMoadmodal}   addTodo={this.addTodo}/>: null}  
-                    {this.state.loadpost ? <ModalForLoad close = {this.showMoadmodal}   addTodo={this.addTodo}/>: null}                  
+                    {this.state.loadpost ? <ModalForLoad close = {this.showMoadmodal}   addTodo={this.addTodo}/>: null}                    
                     <button onClick={() => this.showMoadmodal()} className="load">
                         <span aria-label="Параметри"></span>
                     </button>
