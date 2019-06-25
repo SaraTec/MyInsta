@@ -12,6 +12,7 @@ body{
     border-radius: 3px;
     border: 1px solid #e6e6e6;
     padding-bottom: 1px;
+    margin-bottom: 60px;
 }
 .post_title{
     width: 100%;
@@ -36,6 +37,7 @@ width: 32px;
     font-size: 14px;
     color: #262626;
     font-family: sans-serif;
+    font-weight: 550;
 }
 .post_img{
     width: 100%;
@@ -150,4 +152,36 @@ width: 32px;
     color: #999;
     text-transform: uppercase;
     margin-bottom: 4px;
+}
+.publishComment{
+    padding-left: 16px;
+    padding-right: 16px;
+    min-height: 56px;
+    border-top: 1px solid #efefef;
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #999;
+}
+.inputComment{
+    background: 0 0;
+    border: 0;
+    color: #262626;
+    font-size: 14px;
+    min-height: 18px;
+    max-height: 80px;
+    outline: 0;
+    padding: 0;
+    resize: none;
+    width: 80%;
+}
+.postComment{
+    width: 20%;
+    color: #3897f0;
+    font-size: 14px;
+    font-weight: 550;
+    
 }

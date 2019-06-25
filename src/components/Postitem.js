@@ -5,14 +5,35 @@ import Comments from './Comments'
 export class Postitem extends Component {
     state = {
         liked: false,
-        saved: false
+        saved: false,
+        commenti:[],
+        added:""
     }
-    LikeIt = () =>{
-        this.setState({liked: !this.state.liked});
+
+    componentDidMount = () => {
+        if(this.props.todo.comments!=undefined)
+        {
+            if(this.props.todo.comments.length!=0){
+                this.setState({ commenti: this.props.todo.comments})                
+            }
+        }           
     }
-    SaveIt = () =>{
-        this.setState({saved: !this.state.saved});
+
+    LikeIt = () => {
+        this.setState({ liked: !this.state.liked });
     }
+
+    SaveIt = () => {
+        this.setState({ saved: !this.state.saved });
+    }
+
+    onChange = (e) => this.setState({ added: e.target.value });
+
+    onClick = () => {
+        this.setState({ commenti:  [...this.state.commenti, this.state.added]});
+        this.setState({  added:  ""});
+    }
+
     render() {
         const { id, userName, imageUrl, avatar, likes, description, createdAt } = this.props.todo;
         let ago;
@@ -65,6 +86,7 @@ export class Postitem extends Component {
                 break
             }
         }
+
         return (
 
             <div className='post'>
@@ -79,7 +101,7 @@ export class Postitem extends Component {
                 </div>
                 <img className="post_img" src={imageUrl}></img>
                 <div className="respons">
-                    <button onClick = {this.LikeIt}>
+                    <button onClick={this.LikeIt}>
                         <span className={LikeClass}></span>
                     </button>
                     <button>
@@ -88,7 +110,7 @@ export class Postitem extends Component {
                     <button>
                         <span className="responsitem3"></span>
                     </button>
-                    <button onClick = {this.SaveIt} style={{ marginLeft: "440px" }}>
+                    <button onClick={this.SaveIt} style={{ marginLeft: "440px" }}>
                         <span className={SavedClass}></span>
                     </button>
                 </div>
@@ -96,11 +118,15 @@ export class Postitem extends Component {
                     <p>{likes} вподобань</p>
                 </div>
                 <div className="description">
-                    <p><span style={{ fontWeight: '600' }}>{userName}</span> {description}</p>
+                    <p style = {{wordBreak: "break-all"}}><span style={{ fontWeight: '600' }}>{userName}</span> {description}</p>
                 </div>
-                {this.props.todo.comments ? <Comments hidden = {true} comments = {this.props.todo.comments}/> : <Comments hidden = {true} comments = {new Array()}/>}
+                <Comments hidden={true} comments={this.state.commenti} /> 
                 <div className="time">
                     <p>{ago}</p>
+                </div>
+                <div className="publishComment">
+                    <textarea  ria-label="Додайте коментар..."  value={this.state.added} onChange={this.onChange} placeholder="Додайте коментар..." className = "inputComment"></textarea>
+                    <button className = "postComment" onClick={this.onClick} disabled="">Опублікувати</button>
                 </div>
             </div >
         )

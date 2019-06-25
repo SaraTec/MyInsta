@@ -46,12 +46,10 @@ class App extends Component {
         var newData = JSON.stringify(payload);
         try{
         await DataPost(newData); }
-        catch(error){alert("Зображення завелике")}
-        console.log(newData);
+        catch(error){alert("Введіть зображення меншого розміру")}
         this.loadAll();
     }
-    showMoadmodal =()=>{
-        console.log(this.state.loadpost);        
+    showMoadmodal =()=>{       
         this.setState({loadpost: !this.state.loadpost});
     }
     render() {
@@ -59,7 +57,8 @@ class App extends Component {
             <div className="App">
                 <div className="conntainer">
                     <Header />
-                    {this.state.loadpost ? <ModalForLoad close = {this.showMoadmodal}   addTodo={this.addTodo}/>: null}
+                    {this.state.loadpost ? <ModalForLoad close = {this.showMoadmodal}   addTodo={this.addTodo}/>: null}  
+                    {this.state.loadpost ? <ModalForLoad close = {this.showMoadmodal}   addTodo={this.addTodo}/>: null}                  
                     <button onClick={() => this.showMoadmodal()} className="load">
                         <span aria-label="Параметри"></span>
                     </button>

@@ -10,7 +10,7 @@ class ModalForLoad extends Component {
         userName: "scottiks",
         avatar: "https://instagram.fiev11-1.fna.fbcdn.net/vp/549876cbc042095110b1164cbb199d2f/5DBFA20E/t51.2885-19/s150x150/12224270_492808044225665_324893768_a.jpg?_nc_ht=instagram.fiev11-1.fna.fbcdn.net"
     }
-    
+
     reviewIMG = () => {
         var preview = document.getElementById('blah');
         var file = document.querySelector('input[type=file]').files[0];
@@ -44,8 +44,9 @@ class ModalForLoad extends Component {
                             {this.state.userName}
                         </p>
                     </div>
-                    <div className="input_form">
-                        <input type="file" id="image_uploads" name="image_uploads" onChange={() => this.reviewIMG()} accept=".jpg, .jpeg, .png" multiple></input>
+                    <div className="input_form">      
+                        <input type="file" name="file" onChange={() => this.reviewIMG()} id="file" class="inputfile" accept=".jpg, .jpeg, .png"/>
+                        <label for="file"><i class="fas fa-download" style = {{marginBottom:"0"}}></i> Виберіть зображення</label>
                         <img id="blah" src={this.state.src} alt="your image" />
                         <textarea type="text"
                             className="input_text"
@@ -54,7 +55,7 @@ class ModalForLoad extends Component {
                             value={this.state.description}
                             onChange={this.onChange}
                         ></textarea>
-                        <button onClick={this.onClick} className = "button5">Опублікувати</button>
+                        <button onClick={this.onClick} className="button5">Опублікувати</button>
                     </div>
                     <span className="close" onClick={this.props.close} >&times;</span>
                 </div>
