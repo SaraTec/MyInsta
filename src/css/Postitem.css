@@ -14,6 +14,35 @@ body{
     padding-bottom: 1px;
     margin-bottom: 60px;
 }
+@media screen and (max-width: 900px) {
+    
+    .post
+    {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    .post
+    {
+        width: 350px;
+    }
+    .postComment {
+        width: 30%!important;
+    }
+    .inputComment {
+        width: 70%!important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    
+    .post
+    {
+        width: 300px;
+    }
+}
 .post_title{
     width: 100%;
     display: flex;
@@ -62,7 +91,12 @@ width: 32px;
     background-color: #fff;
     display: flex;
     align-items: center;
-    justify-content: start;        
+    justify-content: space-between;        
+}
+.left_respons{
+    display: flex;
+    align-items: center;
+    justify-content: start;   
 }
 .respons button{
     min-height: 40px;
@@ -143,6 +177,7 @@ width: 32px;
     width: 100%;
     font-size: 14px;
     color: #262626;
+    margin-bottom: 4px;
 }
 .time{
     width: 100%;
@@ -183,5 +218,5 @@ width: 32px;
     color: #3897f0;
     font-size: 14px;
     font-weight: 550;
-    
+
 }

@@ -20,10 +20,13 @@
     border: 1px solid #888;
     width: 80%;
     display: flex;
+    flex-direction: column;  
+  }
+  .modal-header{
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  
   /* The Close Button */
   .close {
     color: #aaaaaa;
@@ -47,7 +50,6 @@
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  width: 80%;
   }
   .input_form *{
     margin-bottom:20px; 
@@ -115,4 +117,10 @@
 .inputfile:focus + label,
 .inputfile + label:hover {
     background-color: #EE6648;
+}
+@media screen and (max-width: 500px) {
+#blah {
+  height: 180px;
+  width: auto;
+}
 }

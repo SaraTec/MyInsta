@@ -16,7 +16,7 @@ class Comments extends Component {
     }
     openModal = () =>
     {
-        alert("сука")
+        //alert("сука")
     }
     render() {
         let max_length;
@@ -25,8 +25,9 @@ class Comments extends Component {
         }
         else
             max_length = this.state.comments.length;
-        let all_comments = this.state.comments.slice(this.state.comments.length-max_length, this.state.comments.length).map((comment) => (
-            <CommentItem comment={comment} comentator={this.state.comentator} />
+        let all_comments = this.state.comments
+            .slice(this.state.comments.length-max_length, this.state.comments.length).map((comment, key) => (
+            <CommentItem key={key} comment={comment} comentator={this.state.comentator} />
         ));
         return (
             <div className="comments">

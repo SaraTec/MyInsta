@@ -2,21 +2,22 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import '../css/Postitem.css'
 import Comments from './Comments'
+import ModalShowMore from '../components/ModalShowMore';
 export class Postitem extends Component {
     state = {
         liked: false,
         saved: false,
-        commenti:[],
-        added:""
+        commenti: [],
+        added: "",
+        showMore: false
     }
 
     componentDidMount = () => {
-        if(this.props.todo.comments!=undefined)
-        {
-            if(this.props.todo.comments.length!=0){
-                this.setState({ commenti: this.props.todo.comments})                
+        if (this.props.todo.comments != undefined) {
+            if (this.props.todo.comments.length != 0) {
+                this.setState({ commenti: this.props.todo.comments })
             }
-        }           
+        }
     }
 
     LikeIt = () => {
@@ -30,8 +31,14 @@ export class Postitem extends Component {
     onChange = (e) => this.setState({ added: e.target.value });
 
     onClick = () => {
-        this.setState({ commenti:  [...this.state.commenti, this.state.added]});
-        this.setState({  added:  ""});
+        this.setState({ commenti: [...this.state.commenti, this.state.added] });
+        this.setState({ added: "" });
+    }
+
+    showMore = () => {
+        this.setState({ showMore: true });
+        console.log("showMore");
+        
     }
 
     render() {
@@ -88,8 +95,9 @@ export class Postitem extends Component {
         }
 
         return (
-
+            
             <div className='post'>
+                {this.state.showMore ? <ModalShowMore onClick={() => this.showMore()}/>: null}
                 <div className='post_title'>
                     <div>
                         <img className="user_icon" src={avatar}></img>
@@ -97,20 +105,22 @@ export class Postitem extends Component {
                             {userName}
                         </p>
                     </div>
-                    <button onClick={() => this.props.delTodo(id)} className='btnStyle'><i class="fas fa-ellipsis-h"></i></button>
+                    <button onClick={() => this.props.delTodo(id)} className='btnStyle'><i className="fas fa-ellipsis-h"></i></button>
                 </div>
                 <img className="post_img" src={imageUrl}></img>
                 <div className="respons">
-                    <button onClick={this.LikeIt}>
-                        <span className={LikeClass}></span>
-                    </button>
-                    <button>
-                        <span className="responsitem2"></span>
-                    </button>
-                    <button>
-                        <span className="responsitem3"></span>
-                    </button>
-                    <button onClick={this.SaveIt} style={{ marginLeft: "440px" }}>
+                    <div className="left_respons">
+                        <button onClick={this.LikeIt}>
+                            <span className={LikeClass}></span>
+                        </button>
+                        <button>
+                            <span className="responsitem2"></span>
+                        </button>
+                        <button>
+                            <span className="responsitem3"></span>
+                        </button>
+                    </div>
+                    <button onClick={this.SaveIt}>
                         <span className={SavedClass}></span>
                     </button>
                 </div>
@@ -118,15 +128,15 @@ export class Postitem extends Component {
                     <p>{likes} вподобань</p>
                 </div>
                 <div className="description">
-                    <p style = {{wordBreak: "break-all"}}><span style={{ fontWeight: '600' }}>{userName}</span> {description}</p>
+                    <p style={{ wordBreak: "break-all" }}><span style={{ fontWeight: '600' }}>{userName}</span> {description}</p>
                 </div>
-                <Comments hidden={true} comments={this.state.commenti} /> 
+                <Comments hidden={true} comments={this.state.commenti} delTodo={this.showMore}/>
                 <div className="time">
                     <p>{ago}</p>
                 </div>
                 <div className="publishComment">
-                    <textarea  ria-label="Додайте коментар..."  value={this.state.added} onChange={this.onChange} placeholder="Додайте коментар..." className = "inputComment"></textarea>
-                    <button className = "postComment" onClick={this.onClick} disabled="">Опублікувати</button>
+                    <textarea ria-label="Додайте коментар..." value={this.state.added} onChange={this.onChange} placeholder="Додайте коментар..." className="inputComment"></textarea>
+                    <button className="postComment" onClick={this.onClick} disabled="">Опублікувати</button>
                 </div>
             </div >
         )

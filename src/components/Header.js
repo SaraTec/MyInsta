@@ -35,13 +35,13 @@ function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {     
         document.getElementsByClassName("main_header")[0].style.padding = "0px 20px 0px 20px";
         document.getElementsByClassName("main_header")[0].style.height = "51px";
-        document.getElementsByClassName("SvO5t")[0].style.display = "none";
-        document.getElementsByClassName("cq2ai")[0].style.display = "none";
+        document.getElementsByClassName("SvO5t")[0].style.visibility = "hidden";
+        document.getElementsByClassName("cq2ai")[0].style.visibility = "hidden";
     } else {
         document.getElementsByClassName("main_header")[0].style.padding = "26px 20px 26px 20px"
         document.getElementsByClassName("main_header")[0].style.height = "76px";
-        document.getElementsByClassName("SvO5t")[0].style.display = "block";
-        document.getElementsByClassName("cq2ai")[0].style.display = "block";
+        document.getElementsByClassName("SvO5t")[0].style.visibility = "visible";
+        document.getElementsByClassName("cq2ai")[0].style.visibility = "visible";
     }
 }
 

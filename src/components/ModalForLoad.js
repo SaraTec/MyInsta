@@ -36,17 +36,20 @@ class ModalForLoad extends Component {
     }
     render() {
         return (
-            <div id="myModal" class="modal">
+            <div id="myModal" className="modal">
                 <div className="modal-content">
-                    <div className="modal-user" >
-                        <img className="user_icon" src={this.state.avatar}></img>
-                        <p className="userName">
-                            {this.state.userName}
-                        </p>
+                    <div className="modal-header">
+                        <div className="modal-user" >
+                            <img className="user_icon" src={this.state.avatar}></img>
+                            <p className="userName">
+                                {this.state.userName}
+                            </p>
+                        </div>
+                        <span className="close" onClick={this.props.close} >&times;</span>
                     </div>
-                    <div className="input_form">      
-                        <input type="file" name="file" onChange={() => this.reviewIMG()} id="file" class="inputfile" accept=".jpg, .jpeg, .png"/>
-                        <label for="file"><i class="fas fa-download" style = {{marginBottom:"0"}}></i> Виберіть зображення</label>
+                    <div className="input_form">
+                        <input type="file" name="file" onChange={() => this.reviewIMG()} id="file" className="inputfile" accept=".jpg, .jpeg, .png" />
+                        <label for="file"><i className="fas fa-download" style={{ marginBottom: "0" }}></i> Виберіть зображення</label>
                         <img id="blah" src={this.state.src} alt="your image" />
                         <textarea type="text"
                             className="input_text"
@@ -57,7 +60,7 @@ class ModalForLoad extends Component {
                         ></textarea>
                         <button onClick={this.onClick} className="button5">Опублікувати</button>
                     </div>
-                    <span className="close" onClick={this.props.close} >&times;</span>
+
                 </div>
             </div>
         )

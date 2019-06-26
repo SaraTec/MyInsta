@@ -63,7 +63,7 @@ class App extends Component {
                         <span aria-label="Параметри"></span>
                     </button>
                     <div className="polotno">
-                        <Posts todos={this.state.todos} delTodo={this.delTodo} />
+                        <Posts todos={this.state.todos}  delTodo={this.delTodo} />
                     </div>
                 </div>
             </div>
